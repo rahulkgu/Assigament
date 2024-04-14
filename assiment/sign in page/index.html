@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-200 h-screen flex flex-col justify-center items-center">
+    <div class="max-w-md w-full bg-white p-8 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold mb-4">Welcome Back</h2>
+        <form id="signInForm" class="space-y-4">
+            <div>
+                <label for="email" class="block text-gray-700 font-semibold">Email</label>
+                <input type="email" id="email" name="email" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-blue-500" placeholder="Enter your email" required>
+            </div>
+            <div>
+                <label for="password" class="block text-gray-700 font-semibold">Password</label>
+                <input type="password" id="password" name="password" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-blue-500" placeholder="Enter your password" required>
+            </div>
+            <div class="text-right">
+                <a href="#" class="text-blue-500 text-sm">Forgot your password?</a>
+            </div>
+            <button type="button" onclick="signIn()" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Sign In</button>
+        </form>
+        <div class="flex justify-center items-center mt-4 space-x-4">
+            <button class="bg-red-600 text-white py-2 px-4 rounded-full focus:outline-none focus:bg-red-700">Google</button>
+            <button class="bg-blue-600 text-white py-2 px-4 rounded-full focus:outline-none focus:bg-blue-700">Facebook</button>
+        </div>
+        <div class="mt-4 text-center">
+            <span class="text-gray-600">Don't have an account yet? </span>
+            <a href="#" class="text-blue-500 font-semibold">Create an account</a>
+        </div>
+    </div>
+
+    <script>
+        function signIn() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            // Here you can add your sign-in logic
+            console.log("Email:", email);
+            console.log("Password:", password);
+        }
+    </script>
+</body>
+</html>

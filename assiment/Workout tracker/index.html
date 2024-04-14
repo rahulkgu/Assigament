@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold mb-8 text-center">Workout Tracker</h1>
+        <div class="flex justify-center mb-8">
+            <div class="w-64">
+                <p class="text-center text-gray-600">Calories burned today:</p>
+                <p class="text-center font-bold text-3xl" id="calories-today">320</p>
+                <p class="text-center text-gray-600">Calories burned yesterday:</p>
+                <p class="text-center font-bold text-3xl" id="calories-yesterday">900</p>
+            </div>
+        </div>
+        <div class="mb-4">
+            <h2 class="text-2xl font-bold mb-2">Upcoming Workout</h2>
+            <div class="bg-gray-200 p-4 rounded">
+                <p class="text-xl font-bold">Full Body Workout</p>
+                <p class="text-gray-600">Today, 3:00 PM</p>
+            </div>
+        </div>
+        <div class="mb-4">
+            <h2 class="text-2xl font-bold mb-2">What Do You Want to Train</h2>
+            <div class="flex">
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded mr-2">Full Body Workout</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded mr-2">Arms</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded">Chest</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const caloriesToday = document.getElementById('calories-today');
+        const caloriesYesterday = document.getElementById('calories-yesterday');
+
+        // Update the calories burned today and yesterday
+        caloriesToday.textContent = '320';
+        caloriesYesterday.textContent = '900';
+
+        // Add functionality for the buttons
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                alert(`You selected ${button.textContent}`);
+            });
+        });
+    </script>
+</body>
+</html>

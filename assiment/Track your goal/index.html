@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold mb-8 text-center">Track Your Goals</h1>
+        <form id="goal-form">
+            <input type="text" id="goal-input" class="border border-gray-300 p-2 mb-4" placeholder="Enter your goal...">
+            <button type="submit" class="bg-blue-500 text-white p-2">Add Goal</button>
+        </form>
+        <ul id="goal-list" class="list-disc list-inside mb-8"></ul>
+        <button id="clear-goals" class="bg-red-500 text-white p-2">Clear Goals</button>
+    </div>
+    <script>
+        document.getElementById('goal-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const input = document.getElementById('goal-input');
+            const goal = input.value;
+            if (goal) {
+                const li = document.createElement('li');
+                li.textContent = goal;
+                document.getElementById('goal-list').appendChild(li);
+                input.value = '';
+            }
+        });
+
+        document.getElementById('clear-goals').addEventListener('click', function() {
+            const list = document.getElementById('goal-list');
+            while (list.firstChild) {
+                list.removeChild(list.firstChild);
+            }
+        });
+    </script>
+</body>
+</html>

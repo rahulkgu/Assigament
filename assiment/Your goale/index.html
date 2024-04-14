@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-200 h-screen flex flex-col justify-center items-center">
+    <div class="max-w-md w-full bg-white p-8 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold mb-4">What are your goals?</h2>
+        <div class="grid grid-cols-1 gap-4">
+            <div class="flex justify-between items-center">
+                <label for="weightLoss" class="block text-gray-700 font-semibold">Weight Loss</label>
+                <input type="radio" id="weightLoss" name="goal" value="Weight Loss" class="form-radio h-5 w-5 text-blue-500">
+            </div>
+            <div class="flex justify-between items-center">
+                <label for="muscleGain" class="block text-gray-700 font-semibold">Muscle Gain</label>
+                <input type="radio" id="muscleGain" name="goal" value="Muscle Gain" class="form-radio h-5 w-5 text-blue-500">
+            </div>
+            <div class="flex justify-between items-center">
+                <label for="flexibility" class="block text-gray-700 font-semibold">Flexibility and Mobility</label>
+                <input type="radio" id="flexibility" name="goal" value="Flexibility and Mobility" class="form-radio h-5 w-5 text-blue-500">
+            </div>
+            <div class="flex justify-between items-center">
+                <label for="generalFitness" class="block text-gray-700 font-semibold">General Fitness</label>
+                <input type="radio" id="generalFitness" name="goal" value="General Fitness" class="form-radio h-5 w-5 text-blue-500">
+            </div>
+            <div class="flex justify-between items-center">
+                <label for="eventTraining" class="block text-gray-700 font-semibold">Event - specific training</label>
+                <input type="radio" id="eventTraining" name="goal" value="Event - specific training" class="form-radio h-5 w-5 text-blue-500">
+            </div>
+            <div class="flex justify-between items-center">
+                <label for="mindfulness" class="block text-gray-700 font-semibold">Mindfulness and Mental Health</label>
+                <input type="radio" id="mindfulness" name="goal" value="Mindfulness and Mental Health" class="form-radio h-5 w-5 text-blue-500">
+            </div>
+        </div>
+        <button type="button" onclick="confirmGoals()" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blue-600 mt-4 w-full">Confirm</button>
+    </div>
+
+    <script>
+        function confirmGoals() {
+            var goals = document.querySelector('input[name="goal"]:checked');
+            if (goals) {
+                console.log("Selected Goal:", goals.value);
+                // Here you can add your logic to proceed with the selected goals
+            } else {
+                alert("Please select at least one goal.");
+            }
+        }
+    </script>
+</body>
+</html>
+
